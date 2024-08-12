@@ -71,7 +71,7 @@
         </div>
       </section>
       <section class="how-it-work container">
-        <h2>Как это работает</h2>
+        <h2 id="how-it-work">Как это работает</h2>
         <div class="how-it-work-body">
           <ul class="how-it-work-list">
             <li class="how-it-work-item">
@@ -146,7 +146,7 @@
         </div>
       </section>
       <section class="third-block">
-        <h2 class="visually-hidden">Третий блок</h2>
+        <h2 id="third-block" class="visually-hidden">Третий блок</h2>
         <div class="third-block-card container">
           <div class="third-block-body">
             <h3 class="third-block-title">Круто, ты дошел до третьего блока</h3>
@@ -170,7 +170,7 @@
         </div>
       </section>
       <section class="ask-answer container">
-        <h2>Вопросы и ответы</h2>
+        <h2 id="question-and-answer">Вопросы и ответы</h2>
         <div class="ask-answer-body">
           <ul class="ask-answer-list accordion-container">
             <li class="ask-answer-item ac">
@@ -407,9 +407,9 @@
           </ul>
         </div>
       </section>
-      <section class="info-block container">
+      <section class="info-block">
         <h2 class="visually-hidden">Странный блок</h2>
-        <div class="info-block-body">
+        <div class="info-block-body container">
           <ul class="info-block-list">
             <li class="info-block-item">
               <h3>Опрошенных пользовались микрокредитами</h3>
@@ -460,8 +460,45 @@
           </ul>
         </div>
       </section>
-    </main>
+      <section class="internet-lab">
+        <h2 id="form">Отправь форму</h2>
+        <form class="internet-lab-form container">
+          <div class="internet-lab-form-body">
+            <label for="name" class="visually-hidden">Имя</label>
+            <input
+              class="internet-lab-form-input input"
+              id="name"
+              placeholder="Имя"
+            />
+            <label for="phone" class="visually-hidden">Телефон</label>
+            <input
+              type="tel"
+              class="internet-lab-form-input input"
+              id="phone"
+              placeholder="Телефон"
+            />
+            <div class="internet-lab-checkbox">
+              <input
+                type="checkbox"
+                class="internet-lab-form-checkbox"
+                id="agree"
+                name="agree"
+              />
+              <label class="internet-lab-label-checkbox" for="agree"
+                >Согласен, отказываюсь</label
+              >
+            </div>
 
+            <button class="internet-lab-form-button button" type="submit">
+              Отправить
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer-description">© 2024 Лаборатория интернет</p>
+    </footer>
     <script src="./js/accordion.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>

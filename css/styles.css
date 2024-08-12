@@ -74,10 +74,51 @@ svg * {
   text-decoration: var(--transition-duration);
 }
 
+.input {
+  height: var(--input-heigth);
+  padding-inline: 16px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 32px;
+  background-color: var(--color-extra-light-gray);
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--color-dark-gray);
+}
+
+.input::placeholder,
+select.input:invalid {
+  color: var(--color-dark-gray);
+}
+
+.input:hover {
+  border: 2px solid var(--color-middle-gray);
+}
+
+.input:focus {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  outline: none;
+  border: 2px solid var(--color-middle-gray);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .button {
   display: inline-flex;
   height: var(--input-heigth);
   align-items: center;
+  justify-content: center;
   font-size: 20px;
   font-weight: 600;
   border: none;
@@ -129,8 +170,6 @@ h3 {
 }
 
 .banner-body {
-  /*max-height: 335px;
-  max-width: clamp(288px, 39vw, 750px);*/
   color: var(--color-white);
   text-align: center;
   padding-inline: clamp(16px, 1.55vw, 145px);
@@ -213,7 +252,8 @@ h3 {
   text-decoration: underline;
 }
 
-.how-it-work {
+.how-it-work,
+.internet-lab {
   padding-top: var(--header-height);
   padding-bottom: var(--header-height);
   position: relative;
@@ -261,6 +301,10 @@ h3 {
   padding-bottom: 80px;
 }
 .ask-answer-body {
+  padding-inline: 105px;
+}
+.ask-answer-body,
+.internet-lab-form {
   padding-top: 40px;
 }
 .ask-ansver-title {
@@ -299,6 +343,73 @@ h3 {
   row-gap: 37px;
 }
 
+.internet-lab-form-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  row-gap: 30px;
+  padding-inline: 208px;
+}
+
+.internet-lab-form-button {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.internet-lab-form-button:hover {
+  background-color: var(--color-middle-blue);
+  cursor: pointer;
+}
+.internet-lab-checkbox {
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+}
+.internet-lab-form-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.internet-lab-form-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.internet-lab-form-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid var(--color-middle-gray);
+  border-radius: var(--border-radius);
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80% 80%;
+  cursor: pointer;
+}
+.internet-lab-label-checkbox {
+  cursor: pointer;
+  font-size: 16px;
+}
+.internet-lab-form-checkbox:checked + label::before {
+  border-color: var(--color-blue);
+  background-color: var(--color-blue);
+  background-image: url("../icons/check.svg");
+}
+.footer {
+  display: flex;
+  height: var(--header-height);
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1500px) {
+  .internet-lab-form-body {
+    padding-inline: 100px;
+  }
+}
 @media (max-width: 1280px) {
   .how-it-work {
     padding-top: 56px;
@@ -306,6 +417,9 @@ h3 {
   }
   .how-it-work-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .internet-lab-form-body {
+    padding-inline: 0;
   }
 }
 
@@ -429,10 +543,12 @@ h3 {
   .how-it-work,
   .third-block-card,
   .ask-answer,
-  .info-block {
+  .info-block,
+  .internet-lab-form-body {
     padding-inline: 25px;
   }
-  .how-it-work-body {
+  .how-it-work-body,
+  .internet-lab {
     padding-top: 42px;
   }
   .how-it-work-list {
@@ -450,7 +566,8 @@ h3 {
   }
 
   .third-block,
-  .ask-answer {
+  .ask-answer,
+  .internet-lab {
     padding-bottom: 56px;
   }
 
@@ -458,7 +575,8 @@ h3 {
     padding-bottom: 16px;
   }
 
-  .third-block-card {
+  .third-block-card,
+  .internet-lab-form-body {
     column-gap: 24px;
   }
   .info-block-list {
@@ -472,6 +590,25 @@ h3 {
   .info-block-description {
     padding-top: 45px;
   }
+  .ask-answer-body,
+  .internet-lab-form {
+    padding-inline: 0;
+  }
+
+  .info-block > .container {
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .internet-lab-form-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+  .internet-lab-form {
+    padding-top: 30px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -482,7 +619,8 @@ h3 {
   .how-it-work,
   .ask-answer,
   .header,
-  .info-block {
+  .info-block,
+  .internet-lab-form-body {
     padding-inline: 16px;
   }
   .how-it-work-body {

@@ -1,7 +1,8 @@
-var element = document.getElementById("header-menu");
-var trigger = document.getElementById("burger-button");
-var logo = document.getElementById("header-logo-text");
-var body = document.body;
+let element = document.getElementById("header-menu");
+let trigger = document.getElementById("burger-button");
+let logo = document.getElementById("header-logo-text");
+let menuLinks = document.querySelectorAll(".header-menu-link");
+let body = document.body;
 
 trigger?.addEventListener("click", function (e) {
   e.preventDefault();
@@ -10,6 +11,15 @@ trigger?.addEventListener("click", function (e) {
   logo?.classList.toggle("active");
   body?.classList.toggle("lock");
 });
+
+menuLinks.forEach((link) =>
+  link.addEventListener("click", () => {
+    element?.classList.remove("active");
+    trigger?.classList.remove("active");
+    logo?.classList.remove("active");
+    body?.classList.remove("lock");
+  })
+);
 
 new Accordion(".accordion-container");
 
